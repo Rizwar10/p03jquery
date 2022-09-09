@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pemrograman Web</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <h3> The Top 10 of My Best Friends</h3>
+   
+
+    <table class="tabel-konten">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Nama</th>
+                <th>Nim</th>
+                <th>Alamat</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="row__1">
+                <td>1</td>
+                <td class="nama-kawan" >Arif Khotibul Umam</td>
+                <td>41215950</td>
+                <td>Cirebon</td>
+                <td class="hapus" id="hapus__1">Delete</td>
+            </tr>
+            <tr id="row__2">
+                <td>2</td>
+                <td class="nama-kawan" >Rizky Hidayattullah</td>
+                <td>41215757</td>
+                <td>Indramayu</td>
+                <td class="hapus" id="hapus__2">Delete</td>
+            </tr>
+            <tr id="row__3">
+                <td>3</td>
+                <td class="nama-kawan" >Jul Saputra Trimulya</td>
+                <td>41215547</td>
+                <td>Kuningan</td>
+                <td class="hapus" id="hapus__3">Delete</td>
+            </tr>
+            <tr id="row__4">
+                <td>4</td>
+                <td class="nama-kawan" >Muhammad Syahrul Fuadi</td>
+                <td>41216014</td>
+                <td>Cirebon</td>
+                <td class="hapus" id="hapus__4">Delete</td>
+            </tr>
+            <tr id="row__5">
+                <td>5</td>
+                <td class="nama-kawan" >Erinna Astiadewi</td>
+                <td>41215908</td>
+                <td>Majalengka</td>
+                <td class="hapus" id="hapus__5">Delete</td>
+            </tr>
+            <tr id="row__6">
+                <td>6</td>
+                <td class="nama-kawan" >Masdarul Rizqi</td>
+                <td>41215305</td>
+                <td>Indramayu</td>
+                <td class="hapus" id="hapus__6">Delete</td>
+            </tr>
+            <tr id="row__7">
+                <td>7</td>
+                <td class="nama-kawan" >Ibnu Sina Salman Syam</td>
+                <td>41216002</td>
+                <td>Cirebon</td>
+                <td class="hapus" id="hapus__7">Delete</td>
+            </tr>
+            <tr id="row__8">
+                <td>8</td>
+                <td class="nama-kawan" >Ridwan Augustyo Maulana</td>
+                <td>41215993</td>
+                <td>Cirebon</td>
+                <td class="hapus" id="hapus__8">Delete</td>
+            </tr>
+            <tr id="row__9">
+                <td>9</td>
+                <td class="nama-kawan" >Suteja</td>
+                <td>41216011</td>
+                <td>Cirebon</td>
+                <td class="hapus" id="hapus__9">Delete</td>
+            </tr>
+            <tr id="row__10">
+                <td>10</td>
+                <td class="nama-kawan" >Dhestiar Aflia Zeha Rahit</td>
+                <td>41216010</td>
+                <td>Cirebon</td>
+                <td class="hapus" id="hapus__10">Delete</td>
+            </tr>
+        </tbody>
+    </table>
+
+<script>
+	$(document).ready(function(){
+		$('.nama-kawan').click(function(){
+			let isi =$(this).text();
+
+			let isi2 = prompt('Mau Di Ubah 😜?',isi);
+            if(!isi2) return;
+
+
+            $(this).text(isi2);
+
+		})
+
+        $('.hapus').click(function(){
+            // alert(1)
+            let yakin = confirm('Yakin Mau Di Hapus 🤷‍♂️?');
+            if(!yakin)return;
+
+            let id = $(this).prop('id');
+            // alert(id);
+            let rid = id.split('__');
+            let baris_ke = rid[1];
+
+            // alert(baris_ke);
+            $('#row__'+baris_ke).slideUp()
+            
+            // alert('Anda Yakin')
+        })
+    })
+
+</script>
+
+<center><a  href="https://rizwar10.github.io/"><button class="Tombol">Kembali ke halaman utama</button></a></center>
+
+
+</body>
+</html>
